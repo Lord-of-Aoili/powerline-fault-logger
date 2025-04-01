@@ -1,0 +1,295 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.current-info {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    gap: 10px;
+}
+
+/* General button styling */
+button {
+    margin: 5px 10px;
+    padding: 15px 30px; /* Increased padding for more space around text */
+    font-size: 18px; /* Keep font size consistent */
+    color: white;
+    background-color: #4682B4; /* Nice blue color */
+    border: none;
+    border-radius: 5px; /* Slight rounding for a modern look */
+    cursor: pointer;
+    display: inline-block; /* Ensures proper box alignment */
+    text-align: center; /* Ensure text remains centered */
+    line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+/* Main fault buttons */
+#button-grid button {
+    width: 170px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    padding: 0; /* Remove extra padding for consistent sizing */
+    font-size: 18px; /* Consistent font size */
+    color: white;
+    background-color: #4682B4; /* Blue color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    text-align: center; /* Center text horizontally */
+    line-height: normal; /* Reset line height for multi-line text */
+    cursor: pointer; /* Pointer cursor for buttons */
+}
+
+/* Hover effect for main buttons */
+#button-grid button:hover {
+    background-color: #5A9; /* Lighter blue on hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Adjust individual button rows */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* More space between buttons */
+    margin-bottom: 15px; /* Increased space between rows */
+}
+
+/* Single button row (e.g., Pole Equipment) */
+.single-button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Increased spacing for better layout */
+}
+
+/* Shared container for settings and additional buttons */
+.settings-additional-container {
+    display: flex;
+    flex-direction: column; /* Stack settings and additional buttons vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Space between settings and additional button groups */
+    margin-top: 20px; /* Space from elements above */
+}
+
+/* Settings buttons */
+.settings-buttons {
+    display: flex;
+    justify-content: center; /* Center settings buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+.settings-buttons button {
+    width: 160px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #32CD32; /* Green */
+}
+
+/* Additional buttons */
+.additional-buttons {
+    display: flex;
+    justify-content: center; /* Center additional buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+/* Additional buttons */
+.additional-buttons button {
+    width: 160px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    font-size: 16px;
+    border: none;
+    font-weight: bold; /* Bold text for visibility */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Ensure text remains centered */
+    line-height: normal; /* Reset line height for multi-line text */
+}
+
+/* Specific styling for "Download CSV" */
+.additional-buttons button:first-child {
+    background-color: #FFD700; /* Yellow */
+    color: black; /* Black text for contrast */
+}
+
+.additional-buttons button:first-child:hover {
+    background-color: #FFC107; /* Slightly darker yellow on hover */
+}
+
+/* Specific styling for "Shutdown Server" */
+.additional-buttons button:last-child {
+    background-color: #DC3545; /* Red */
+    color: white; /* White text for contrast */
+}
+
+.additional-buttons button:last-child:hover {
+    background-color: #C82333; /* Slightly darker red on hover */
+}
+
+/* Hover effect for all buttons */
+button:hover {
+    background-color: #5A9; /* Slightly lighter on hover */
+    color: #fff; /* White text */
+    transition: background-color 0.3s ease;
+}
+
+.new-flight-button {
+    position: fixed; /* Fix the button position relative to the viewport */
+    top: 50px; /* Distance from the top of the screen */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to truly center */
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: #FFA500; /* Orange color for visibility */
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.new-flight-button button:hover {
+    background-color: #FF7F00; /* Slightly darker orange on hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
+/* Feedback Styling */
+#feedback {
+    margin-top: 20px; /* Space between buttons and logs */
+    width: 90%; /* Take most of the screen width */
+    max-width: 500px; /* Limit the maximum width */
+    text-align: left; /* Align logs to the left */
+    font-size: 16px; /* Adjust font size for readability */
+    font-weight: bold; /* Bold text for visibility */
+    color: red; /* Red text for emphasis */
+    line-height: 1.5; /* Better spacing between lines */
+    overflow-y: auto; /* Scroll if content exceeds the screen height */
+}
+
+/* Individual feedback message styling */
+.feedback-message {
+    font-size: 24px; /* Larger text */
+    font-weight: bold; /* Bold text */
+    color: red; /* Red text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque white background for visibility */
+    padding: 10px 20px; /* Padding around the text */
+    border: 2px solid red; /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 5px; /* Space between messages */
+    opacity: 0;
+    animation: fadeInOutQueue 8s ease-in-out; /* 8 seconds duration */
+}
+
+/* Keyframes for fade-in-out effect */
+@keyframes fadeInOutQueue {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Connection Status Bar */
+#status {
+    position: fixed; /* Fixed at the top of the screen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full-width bar */
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000; /* Ensure it appears on top of everything */
+    color: white; /* Text color */
+}
+
+/* Online status */
+.status-online {
+    background-color: rgba(34, 196, 72, 0.791); /* Green with reduced opacity */
+}
+
+/* Offline status */
+.status-offline {
+    background-color: #dc3545; /* Bright red for offline */
+}
+
+/* Box styling for current info */
+.current-info-box {
+    background-color: #f4f4f4; /* Light gray background */
+    border: 2px solid #4682B4; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px 20px; /* Space inside the box */
+    margin: 20px auto; /* Auto margins for centering horizontally */
+    text-align: center; /* Center align text */
+    max-width: 300px; /* Limit width */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Font consistency */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Ensure children are centered */
+}
+
+/* Individual lines inside the box */
+.current-info-box div {
+    font-size: 18px; /* Font size for readability */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 10px; /* Space between each line */
+    color: #333; /* Dark text for readability */
+}
+
+/* Last line has no margin at the bottom */
+.current-info-box div:last-child {
+    margin-bottom: 0;
+}

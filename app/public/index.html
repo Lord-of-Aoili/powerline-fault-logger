@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Line Fault Logger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Connection Status Bar -->
+    <div id="status" class="status-offline">Connecting...</div>
+
+    <!-- New Flight Button -->
+    <div class="new-flight-button">
+        <button onclick="startNewFlight()">New Flight</button>
+    </div>
+
+    <div class="container">
+        <!-- Main Buttons -->
+        <div id="button-grid">
+            <!-- First Row -->
+            <div class="button-row">
+                <button onclick="showFaultModal('pole')">Pole</button>
+                <button onclick="showFaultModal('guy')">Guy</button>
+                <button onclick="showFaultModal('crossarm')">Crossarm</button>
+            </div>
+            <!-- Second Row -->
+            <div class="button-row">
+                <button onclick="showFaultModal('insulator')">Insulator</button>
+                <button onclick="showFaultModal('conductor')">Conductor</button>
+                <button onclick="showFaultModal('vegetation')">Vegetation</button>
+            </div>
+            <div class="single-button-row">
+                <button onclick="showFaultModal('poleEquipment')">Pole Equipment</button>
+            </div>
+
+            <!-- Current Observer and Depot -->
+            <div class="current-info-box">
+                <div>Current Flight: <span id="currentFlight">None</span></div>
+                <div>Current Observer: <span id="currentObserver">None</span></div>
+                <div>Current Depot: <span id="currentDepot">None</span></div>
+            </div>            
+        </div>
+        
+        <!-- Settings and Additional Buttons -->
+        <div class="settings-additional-container">
+            <!-- Settings Buttons -->
+            <div class="settings-buttons">
+                <button onclick="showInputModal('observer')">Set Observer</button>
+                <button onclick="showInputModal('depot')">Set Depot</button>
+            </div>
+        
+            <!-- Additional Buttons -->
+            <div class="additional-buttons">
+                <button onclick="downloadCSV()">Download CSV</button>
+                <button onclick="shutdownServer()">Shutdown Server</button>
+            </div>
+        </div>
+
+        <!-- Modals for fault logging, observer, and depot -->
+        <div id="faultModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="faultTitle">Select Fault Specification</h2>
+                <div id="faultOptions"></div>
+                <div id="poleEquipmentInputContainer" style="display: none;">
+                    <label for="poleEquipmentInput">Specify Condition:</label>
+                    <input type="text" id="poleEquipmentInput" placeholder="Enter condition for Pole Equipment" onkeypress="handlePoleEquipmentInput(event)">
+                </div>
+            </div>
+        </div>
+
+        <div id="inputModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="inputTitle"></h2>
+                <input type="text" id="inputField" placeholder="Enter value" onkeypress="handleInputField(event)">
+            </div>
+        </div>
+
+        <!-- Feedback Container -->
+        <div id="feedback"></div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
